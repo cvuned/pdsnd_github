@@ -1,15 +1,27 @@
 ### Date created
-Include the date you created this project and README file.
+Created: 18/05/2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare data analysis project
 
 ### Description
-Describe what your project is about and what it does
+This project runs a script that provides information about bikeshare data from three different cities: 
+- Chicago
+- New York City
+- Washington)
 
+The analysis allows filtering by month and day, provides certain statistics automatically and allows the user to explore the raw data on demand. 
+
+Simply run `python bikeshare.py` to start! 
 ### Files used
-Include the files used
+
+bikeshare.py
+
+The following data files have been included: 
+chicago.csv 
+new_york_city.csv 
+washington.csv 
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Data and python basic template were provided by Udacity in its Nanodegree: "Programming for Data Science with Python".
 
