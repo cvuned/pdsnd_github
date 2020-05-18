@@ -22,6 +22,13 @@ chicago.csv
 new_york_city.csv 
 washington.csv 
 
+### Python libraries used
+
+The following libraries have been used: 
+- time 
+- numpy
+- pandas
+
 ### Credits
 Data and python basic template were provided by Udacity in its Nanodegree: "Programming for Data Science with Python".
 
