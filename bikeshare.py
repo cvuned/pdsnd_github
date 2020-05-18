@@ -6,7 +6,10 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+# Lists of valid days and months that will be used for filtering: 
 valid_months = ('all', 'january', 'february', 'march', 'april', 'may', 'june')
+
+# Days have been added as their abbreviation as well. 
 valid_days = ('monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'all')    
 
 def get_filters():
@@ -209,7 +212,12 @@ def user_stats(df):
 
     
 def display_raw_data(df): 
-    # This function displays raw data on request of the column being examined, 5 lines at a time. 
+    """
+    This function displays raw data on request for a certain column of data.
+    Prints raw data, 5 lines at a time.
+    """
+
+    # These are the columns that can be shown to the used: 
     valid_columns = ['Start Time', 'End Time', 'Trip Duration','Start Station', 'End Station', 'User Type', 'Gender', 'Birth Year','Month', 'Day_of_week', 'Hour', 'Trip']
 
     # This FIRST While block checks if the user wants to see any data at all.
