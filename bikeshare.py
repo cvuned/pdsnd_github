@@ -8,9 +8,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 # Lists of valid days and months that will be used for filtering: 
 valid_months = ('all', 'january', 'february', 'march', 'april', 'may', 'june')
-
 # Days have been added as their abbreviation as well. 
-valid_days = ('monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'all')    
+valid_days = ('monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun', 'all')    
 
 def get_filters():
     """
@@ -196,11 +195,12 @@ def user_stats(df):
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df: 
         earliest_birth = int(df['Birth Year'].min())
-        most_recent_birth = int(df['Birth Year'].max())
-        popular_birth_year = int(df['Birth Year'].mode()[0])
-
         print('{} is the earliest year of birth.'.format(earliest_birth))
+        
+        most_recent_birth = int(df['Birth Year'].max())
         print('{} is the most recent year of birth.'.format(most_recent_birth))
+        
+        popular_birth_year = int(df['Birth Year'].mode()[0])
         print('{} is the most common year of birth.'.format(popular_birth_year))
 
     else: 
@@ -233,9 +233,9 @@ def display_raw_data(df):
                 column = str(input('What data do you want to see?\n')).title() 
                 if column in valid_columns: 
                     # Now we print data, 5 rows at a time until the user doesn't want to see more data
-                    see_more_data = 'yes' # The first five lines are always displayed 
+                    user_wants_more_data = 'yes' # The first five lines are always displayed 
                     while True: 
-                        if see_more_data in ('yes', ''): 
+                        if user_wants_more_data in ('yes', ''): 
                             if lines_displayed+5 < df[column].shape[0]:
                                 print(df[column][lines_displayed:lines_displayed+5])
                                 lines_displayed += 5
@@ -246,11 +246,11 @@ def display_raw_data(df):
                                 break
                             else:
                                 break
-                        elif see_more_data in ('no', 'stop', 'quit', 'q','cancel', 'I regret my poor decisions'):
+                        elif user_wants_more_data in ('no', 'stop', 'quit', 'q','cancel', 'I regret my poor decisions'):
                             break
                         else: 
                             print('\n Unexpected data input! \n Please, write \'yes\' or press \'Enter\' to continue. \n Otherwise, write \'no\'.')
-                        see_more_data = str(input('Do you want to see more data?\n')).lower()
+                        user_wants_more_data = str(input('Do you want to see more data?\n')).lower()
                 elif column in ('', 'no', 'stop', 'quit', 'q','cancel', 'I regret my poor decisions'):
                     break
                 else: 
