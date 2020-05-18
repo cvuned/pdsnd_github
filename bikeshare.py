@@ -7,7 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 valid_months = ('all', 'january', 'february', 'march', 'april', 'may', 'june')
-valid_days = ('monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'all')    
+valid_days = ('monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun', 'all')    
 
 def get_filters():
     """
