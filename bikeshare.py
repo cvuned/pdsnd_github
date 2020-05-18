@@ -226,9 +226,9 @@ def display_raw_data(df):
                 column = str(input('What data do you want to see?\n')).title() 
                 if column in valid_columns: 
                     # Now we print data, 5 rows at a time until the user doesn't want to see more data
-                    see_more_data = 'yes' # The first five lines are always displayed 
+                    user_wants_more_data = 'yes' # The first five lines are always displayed 
                     while True: 
-                        if see_more_data in ('yes', ''): 
+                        if user_wants_more_data in ('yes', ''): 
                             if lines_displayed+5 < df[column].shape[0]:
                                 print(df[column][lines_displayed:lines_displayed+5])
                                 lines_displayed += 5
@@ -239,11 +239,11 @@ def display_raw_data(df):
                                 break
                             else:
                                 break
-                        elif see_more_data in ('no', 'stop', 'quit', 'q','cancel', 'I regret my poor decisions'):
+                        elif user_wants_more_data in ('no', 'stop', 'quit', 'q','cancel', 'I regret my poor decisions'):
                             break
                         else: 
                             print('\n Unexpected data input! \n Please, write \'yes\' or press \'Enter\' to continue. \n Otherwise, write \'no\'.')
-                        see_more_data = str(input('Do you want to see more data?\n')).lower()
+                        user_wants_more_data = str(input('Do you want to see more data?\n')).lower()
                 elif column in ('', 'no', 'stop', 'quit', 'q','cancel', 'I regret my poor decisions'):
                     break
                 else: 
